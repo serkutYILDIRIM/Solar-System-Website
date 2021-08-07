@@ -1,0 +1,19 @@
+﻿@model List<SatelliteAddModel>
+
+<form asp-action="AddSatellite" method="post">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="form-check">
+            <input type="hidden" asp-for="@Model[i].SatelliteId " />
+            <input type="hidden" asp-for="@Model[i].SatelliteName " />
+
+            <input type="checkbox" asp-for="@Model[i].IsExists" class="form-check-input" />
+            <label class="form-check-label">@Model[i].SatelliteName</label>
+        </div>
+    }
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">Kaydet</button>
+    </div>
+
+</form>

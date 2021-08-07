@@ -1,0 +1,29 @@
+﻿@model List<RecentNews>
+
+<div class="wmuSlider example1" style="overflow: hidden; height: 420px;">
+    <div class="wmuSliderWrapper">
+        @foreach (var recentNews in Model)
+        {
+            <article style="position: absolute; width: 100%; opacity: 0;">
+                <div class="banner-wrap">
+                    <div class="banner_center">
+                        <a asp-action="RecentNewsDetail"asp-controller="RecentNews" asp-route-id="@recentNews.NewsId"><h1>@recentNews.NewsName</h1></a>
+                        <a asp-action="RecentNewsDetail"asp-controller="RecentNews" asp-route-id="@recentNews.NewsId"><h2><span>@recentNews.NewsSubject</span></h2></a>
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+
+    <a class="wmuSliderPrev">Previous</a>
+    <a class="wmuSliderNext">Next</a>
+    <ul class="wmuSliderPagination">
+        <li><a href="#" class="">0</a> </li>
+        <li><a href="#" class="">1</a></li>
+        <li><a href="#" class="">2</a></li>
+    </ul>
+</div>
+<script src="~/js/jquery.wmuSlider.js"></script>
+<script>
+                    $('.example1').wmuSlider();
+</script>

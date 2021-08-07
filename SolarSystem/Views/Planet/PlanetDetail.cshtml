@@ -1,0 +1,46 @@
+﻿@model Planet
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="~/css/templatemo-style.css" rel="stylesheet" />
+</head>
+<div class="works-section" id="PlanetDetail">
+    <div class="container">
+        <div class="section-heading">
+            <h2>@Model.PlanetName</h2>
+            <div class="line-dec"></div>
+            <span>
+                Satellites of the planet @Model.PlanetName: <listSatelliteName planet-id="@Model.PlanetId"></listSatelliteName>
+            </span>
+        </div>
+        <div class="left-image-post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left-image">
+                        <img src="/crudImg/@Model.Picture" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-text">
+                        <h4>About @Model.PlanetName</h4>
+                        <p>
+                            @Model.PlanetInfo
+                        </p>
+                        <p>
+                            The length of a year on the planet: <span> @Model.LengthOfYear </span>
+                        </p>
+                        <p>
+                            One way light time to the sun: <span> @Model.OneWayLightTimeToSun </span>
+                        </p>
+                        <p>
+                            Planet Type: <span> @Model.PlanetType </span>
+                        </p>
+                        <p>
+                            Distance to sun: <span> @Model.DistanceToSun </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

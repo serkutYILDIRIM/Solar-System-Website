@@ -1,0 +1,57 @@
+﻿@model Satellite
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="~/css/templatemo-style.css" rel="stylesheet" />
+</head>
+<div class="works-section" id="SatelliteDetail">
+    <div class="container">
+        <div class="section-heading">
+            <h2>@Model.SatelliteName</h2>
+            <div class="line-dec"></div>
+            <span>
+                The @Model.SatelliteName is the satellite of the <listPlanetName satellite-id="@Model.SatelliteId"></listPlanetName>
+            </span>
+        </div>
+        <div class="left-image-post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left-image">
+                        <img src="/crudImg/@Model.Picture" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-text">
+                        <h4>About @Model.SatelliteName</h4>
+                        <p>
+                            @Model.SatelliteInfo
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-image-post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left-text">
+                        <h4> <listPlanetName satellite-id="@Model.SatelliteId"></listPlanetName></h4>
+                        <p>
+                            <span>
+                                <PlanetInfo satellite-id="@Model.SatelliteId"></PlanetInfo>
+                            </span>
+                            
+                        </p>
+                        <div class="white-button">
+                            <a asp-action="PlanetDetail" asp-controller="Planet" asp-route-id="@ViewBag.PlanetId">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-image">
+                        <img src="/crudImg/@ViewBag.PlanetImage" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

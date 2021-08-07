@@ -1,0 +1,37 @@
+﻿@model List<Satellite>
+
+    <a asp-action="Create" asp-controller="Satellite" asp-area="Admin" class="btn btn-primary btn-sm my-2">Create New Satellite</a>
+
+<div class="container">
+    <table class="table table-sm table-bordered table-hover mt-2">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Satellite Name</th>
+                <th>Satellite Image</th>
+                <th>Satellite Info</th>
+                <th>Delete Operation</th>
+                <th>Update Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th scope="row">@item.SatelliteId</th>
+                <td>@item.SatelliteName</td>
+                <td class="w-25">
+                    <img src="/crudImg/@item.Picture" class="img-fluid img-thumbnail" alt="">
+                </td>
+                <td>@item.SatelliteInfo</td>
+                <td>
+                    <a asp-action="Delete" asp-controller="Satellite" asp-area="Admin" asp-route-id="@item.SatelliteId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+                <td>
+                    <a asp-action="Update" asp-controller="Satellite" asp-area="Admin" asp-route-id="@item.SatelliteId" class="btn btn-warning btn-sm">Update</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

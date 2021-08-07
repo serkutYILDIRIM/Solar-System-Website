@@ -1,0 +1,34 @@
+﻿@model RecentNews
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="~/css/templatemo-style.css" rel="stylesheet" />
+</head>
+<div class="works-section" id="RecentNewsDetail">
+    <div class="container">
+        <div class="section-heading">
+            <h2>@Model.NewsName</h2>
+            <div class="line-dec"></div>
+            <span>
+                 @Model.NewsSubject
+            </span>
+        </div>
+        <div class="left-image-post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left-image">
+                        <img src="/crudImg/@Model.Picture" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-text">
+                        <h4>@Model.NewsSubject</h4>
+                        <p>
+                            @Model.NewsContent
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

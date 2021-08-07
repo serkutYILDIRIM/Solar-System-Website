@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Solar System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Onepage Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/move-top.js"></script>
+    <script type="text/javascript" src="~/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+            });
+        });
+    </script>
+    <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="">
+    <div class="header" id="head">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a asp-action="SolarSystem" asp-controller="Home"><img src="~/images/SolarSystem.png" alt=""></a>
+                </div>
+                <div class="top-menu">
+                    <ul>
+                        <nav class="cl-effect-5">
+                            <li><a asp-action="Index" asp-controller="Home"><span data-hover="Home">Home</span></a></li>
+                            <li><a asp-action="Sun" asp-controller="Home"><span data-hover="Sun">Sun</span></a></li>
+                            <li><a href="#contact" class="scroll"><span data-hover="contact">contact</span></a></li>
+                        </nav>
+                    </ul>
+                </div>
+                <!--script-nav-->
+                <script>
+                    $("span.menu").click(function () {
+                        $(".top-menu ul").slideToggle("slow", function () {
+                        });
+                    });
+                </script>
+                <div class="clearfix"></div>
+            </div>
+            <div class="index-banner">
+                @await Component.InvokeAsync("RecentNewsList")
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer-section" id="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h3> contact</h3>
+                <p>This website was created for model the solar system.Here you can find information about planets and their satellites and you can find the latest news about space </p>
+            </div>
+            <div class="social-icon">
+                <a href="https://twitter.com/serkutyildirim"><i class="icon1"></i></a>
+                <a href="https://www.instagram.com/serkutyildirim/"><i class="icon3"></i></a>
+            </div>
+            <div class="contact">
+
+            </div>
+            <div class="footer-bottom">
+
+                <p>© 2021 Solar System . All rights  Reserved | Created by<a href="#contact">Serkut Yıldırım</a></p>
+
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+
+                });
+            </script>
+            <a href="#" id="toTop" style="display: block;"><span id="toTopHover"></span> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        </div>
+
+    </div>
+
+    <a href="#" id="toTop">To Top</a>
+</body>
+</html>

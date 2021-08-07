@@ -1,0 +1,13 @@
+﻿@model List<Planet>
+
+<ul class="resp-tabs-list">
+
+    <li class="resp-tab-item @(ViewBag.PlanetId==null?"resp-tab-active":"")"><a asp-action="Index" asp-controller="Home" class="resp-tab-item @(ViewBag.PlanetId==null?"resp-tab-active":"")"><span>All Planets</span></a></li>
+
+    @foreach (var planet in Model)
+    {
+        <li class="resp-tab-item @(ViewBag.PlanetId?.ToString()==planet.PlanetId.ToString()?"resp-tab-active":"") "><a asp-action="Index" asp-controller="Home" asp-route-PlanetId="@planet.PlanetId" class="resp-tab-item @(ViewBag.PlanetId?.ToString()==planet.PlanetId.ToString()?"resp-tab-active":"")" ><span>@planet.PlanetName</span></a></li>
+    }
+    <div class="clearfix"></div>
+</ul>
+

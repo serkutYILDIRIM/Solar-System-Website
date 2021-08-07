@@ -1,0 +1,7 @@
+﻿@*Satellite Section*@
+
+@await Component.InvokeAsync("SatelliteList", new { planetId = ViewBag.PlanetId })
+
+@* Planet Section *@
+
+@await Component.InvokeAsync("PlanetList")
